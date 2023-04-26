@@ -1,29 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
 export interface Props {
-    onChange?: (e: any) => void;
-    checked?: boolean;
+  onChange?: (e: any) => void;
+  checked?: boolean;
 }
 
 const ConfiguracaoStyle = styled.section`
-    margin-right: 2em;
+  
 
     .themes {
         display:flex;
         align-items: center
     }
 
-    .themesIcon {
-        font-size: .9em;        
-    }
-
     .switch {
         position: relative;
         display: inline-block;
-        width: 2.4em;
-        height: 1.1em;
+        width: 3.2em;
+        height: 1.5em;
         margin: .2em;
       }
       
@@ -48,10 +43,10 @@ const ConfiguracaoStyle = styled.section`
       .slider:before {
         position: absolute;
         content: "";
-        height: .75em;
-        width: .75em;
-        left: .18em;
-        bottom: .18em;
+        height: 1em;
+        width: 1em;
+        left: .25em;
+        bottom: .25em;
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
@@ -82,20 +77,18 @@ const ConfiguracaoStyle = styled.section`
 
 const ToggleTremes = ({ onChange, checked }: Props) => {
 
-    return (
-        <ConfiguracaoStyle>
-            <section className='themes'>
-                <BsFillSunFill className='themesIcon' />
-                <label className='switch'>
-                    <input type='checkbox'
-                        checked={checked}
-                        onChange={onChange} />
-                    <span className='slider round' ></span>
-                </label>
-                <BsFillMoonStarsFill className='themesIcon' />
-            </section>
-        </ConfiguracaoStyle>
-    )
+  return (
+    <ConfiguracaoStyle>
+      <section className='themes'>
+        <label className='switch'>
+          <input type='checkbox'
+            checked={checked}
+            onChange={onChange} />
+          <span className='slider round' ></span>
+        </label>
+      </section>
+    </ConfiguracaoStyle>
+  )
 }
 
 export default ToggleTremes

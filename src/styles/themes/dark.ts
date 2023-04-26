@@ -8,11 +8,7 @@ export default {
       background: '#222',
       bgMenus: '#222',
       text: '#fff',
-      color: '#fff'
-    },
-
-    logo: {
-      src: "../../assets/LogoDark.mp4"
+      src:'../../assets/LogoDark.mp4',
     },
   };
   

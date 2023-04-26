@@ -7,11 +7,8 @@ export default {
   
       background: '#f5f5f5',
       bgMenus: '#f5f5f5',
-      text: '#303030'
-    },
-
-    logo: {
-      src: "../../assets/LogoLight.mp4"
+      text: '#303030',
+      src:'../../assets/LogoLight.mp4',
     },
   };
   

@@ -11,7 +11,12 @@ const Home = () => {
 
   return (
     <HomeStyle>
-
+<p>HOME</p>
+<p>HOME</p>
+<p>HOME</p>
+<p>HOME</p>
+<p>HOME</p>
+<p>HOME</p>
     </HomeStyle>
   )
 }

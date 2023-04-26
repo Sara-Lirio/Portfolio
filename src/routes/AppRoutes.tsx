@@ -7,8 +7,8 @@ import GlobalStyle from '../styles/global'
 import light from '../styles/themes/light'
 import dark from '../styles/themes/dark'
 
-import Home from '../pages/Home'
 import Header from '../components/Header'
+import Home from '../pages/Home'
 
 const AppRoutes = () => {
   const [theme, setTheme] = usePeristedState<DefaultTheme>('theme', light);
@@ -21,10 +21,9 @@ const AppRoutes = () => {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header toggleTheme={toggleTheme}
-         />
+        <Header toggleTheme={toggleTheme}/>
         <Routes>
-          <Route path='/' element={<Home />} />
+          {/* <Route path='/' element={<Home />} /> */}
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
