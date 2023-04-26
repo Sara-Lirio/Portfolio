@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { CiMenuKebab } from "react-icons/ci";
+import { CgMenuGridR } from "react-icons/cg";
+
 
 const MenuStyle = styled.section`
     cursor: pointer;
@@ -43,7 +44,7 @@ const Menu = () => {
 
     return (
         <MenuStyle>
-            <CiMenuKebab onClick={handleShowMenu} className='btnMenu' />
+            <CgMenuGridR onClick={handleShowMenu} className='btnMenu' />
             {showMenu && (
                 <div className='containerMenu'>
                     <p className='optionMenu'>Sobre mim</p>

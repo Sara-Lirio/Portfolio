@@ -9,5 +9,9 @@ export default {
       bgMenus: '#f5f5f5',
       text: '#303030'
     },
+
+    logo: {
+      src: "../../assets/LogoLight.mp4"
+    },
   };
   

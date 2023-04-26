@@ -10,5 +10,9 @@ export default {
       text: '#fff',
       color: '#fff'
     },
+
+    logo: {
+      src: "../../assets/LogoDark.mp4"
+    },
   };
   
