@@ -1,32 +1,37 @@
 import React, { useState } from 'react'
-import { RxGear } from "react-icons/rx";
+import { RxGear, RxCross2 } from "react-icons/rx";
 import styled from 'styled-components';
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
-
 export interface Props {
-  onChange?: (e:any) => void;
+  onChange?: (e: any) => void;
   checked?: boolean;
 }
 
 const ConfiguracaoStyle = styled.section`
     cursor: pointer;
-    display:flex;
-    flex-direction: column;
-    align-items: flex-end;
+    z-index: 1;
 
+    .btnMenuConfiguracao {
+      width: 4em;
+    }
 
-    .MenuConfiguracao{
-      padding-left: .8em;
-      padding-bottom: 1em;
-      border-radius: 0 1em;
-      height: 8em;
+    .MenuConfiguracao {
+      background-color: ${props => props.theme.colors.bgMenus};
+      width: 8em;
       display:flex;     
       flex-direction: column;
       justify-content: space-around; 
+      align-items: center;
+      height: 10em;
+      padding: 1em;
     }
 
-    .themes{
+    .btnClose {
+      width: 2em;
+    }
+
+    .themes {
         display:flex;
         align-items: center
     }
@@ -99,7 +104,8 @@ const ConfiguracaoStyle = styled.section`
         font-size:.5em;
         letter-spacing: 1.2px;
         text-align:center;
-        font-weight: 200;
+        font-weight: 400;
+        color:${props => props.theme.colors.text}
       }
 
       .selectLanguage{
@@ -117,44 +123,48 @@ const ConfiguracaoStyle = styled.section`
         color: ${props => props.theme.colors.text};
         background: ${props => props.theme.colors.background};
       }
-
 `
 
-const Configuracao = ({onChange, checked}:Props) => {
-    const [configuracao, setConfiguracao] = useState(false);
+const Configuracao = ({ onChange, checked }: Props) => {
+  const [configuracao, setConfiguracao] = useState(false);
 
-    const handleConfiguracao = () => {
-        setConfiguracao((show) => !show)
-    }
+  const handleConfiguracao = () => {
+    setConfiguracao((show) => !show)
+  }
 
-    return (
-        <ConfiguracaoStyle>
-            <RxGear onClick={handleConfiguracao} />
-            {configuracao && (
-                <span className='MenuConfiguracao'> 
-                    <section className='themes' onChange={onChange}>
-                        <BsFillSunFill className='themesIcon'/>
-                        <label className='switch'>
-                            <input type='checkbox' 
-                            checked={checked}
-                            />
-                            <span className='slider round' ></span>
-                        </label>
-                        <BsFillMoonStarsFill className='themesIcon'/>
-                    </section>
-                    <div>
-                        <p className='textLanguage'>Idioma/Language</p>
-                        <select className='selectLanguage'>
-                            <option className='optionLanguage'>
-                              Português (pt-br)
-                              </option>
-                            <option className='optionLanguage'>English (en-us)</option>
-                        </select>
-                    </div>
-                </span>
-            )}
-        </ConfiguracaoStyle>
-    )
+  return (
+    <ConfiguracaoStyle>
+      {!configuracao ? 
+      <RxGear onClick={handleConfiguracao}
+        className='btnMenuConfiguracao' /> : <RxCross2 
+        className='btnClose'
+        onClick={handleConfiguracao}/> }
+      {configuracao && (
+        <span className='MenuConfiguracao'>
+          <section className='themes'>
+            <BsFillSunFill className='themesIcon' />
+            <label className='switch'>
+              <input type='checkbox'
+                checked={checked}
+                onChange={onChange}
+              />
+              <span className='slider round' ></span>
+            </label>
+            <BsFillMoonStarsFill className='themesIcon' />
+          </section>
+          <div>
+            <p className='textLanguage'>Idioma/Language</p>
+            <select className='selectLanguage'>
+              <option className='optionLanguage'>
+                Português (pt-br)
+              </option>
+              <option className='optionLanguage'>English (en-us)</option>
+            </select>
+          </div>
+        </span>
+      )}
+    </ConfiguracaoStyle>
+  )
 }
 
 export default Configuracao

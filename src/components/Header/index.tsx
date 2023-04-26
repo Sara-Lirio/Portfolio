@@ -9,22 +9,21 @@ interface Props {
 }
 
 const HeaderStyle = styled.header`
+    font-size: 20px;
+    height: 3em;
     display:flex;
     justify-content: space-between;
-    font-size: 20px;
-    padding: 1em;
+    padding-top: 1em;
 
     @media (min-width: 1022px) and (max-width: 1400px) {
-        margin: 1em 2em;
-        font-size: 24px;
-      }
+      font-size: 24px;
+    }
 `
 
 const Header = ({ toggleTheme }: Props) => {
   const { title } = useContext(ThemeContext);
 
   return (
-
     <HeaderStyle>
       <Menu />
       <Configuracao

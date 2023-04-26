@@ -1,12 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import GlobalStyle from '../styles/global'
 import usePeristedState from '../utils/usePersistedState'
 
+import { ThemeProvider, DefaultTheme } from 'styled-components'
+import GlobalStyle from '../styles/global'
 import light from '../styles/themes/light'
 import dark from '../styles/themes/dark'
-
 
 import Home from '../pages/Home'
 import Header from '../components/Header'
@@ -17,7 +16,6 @@ const AppRoutes = () => {
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
   };
-
 
   return (
     <BrowserRouter>

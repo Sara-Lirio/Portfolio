@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const HomeStyle = styled.section`
+    width: 100%;
+    position:static;
+`
 
 const Home = () => {
   return (
-    <>
-    <p>Seja bem vindo</p>
-    </>
+    <HomeStyle>
+
+    </HomeStyle>
   )
 }
 
