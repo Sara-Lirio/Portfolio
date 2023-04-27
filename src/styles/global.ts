@@ -17,6 +17,10 @@ body {
     font-family: 'Montserrat', sans-serif;
   }
 
+a {
+    color: inherit;
+}
+
 select {
   font-family: 'Montserrat', sans-serif;
  }

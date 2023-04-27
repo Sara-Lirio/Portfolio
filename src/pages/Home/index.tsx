@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { TbBrandLinkedin, TbBrandGithub, TbBrandDiscord, TbMail } from "react-icons/tb";
 
-
 const HomeStyle = styled.section`
     width: 100%;
     z-index: -1;
@@ -49,7 +48,7 @@ const HomeStyle = styled.section`
       cursor: pointer
     }
 
-    @media (min-width: 1024px) and (max-width: 1366px) {
+    @media (min-width: 920px) and (max-width: 1920px) {
       background-image: url(${props => props.theme.colors.backgroundImage});
       font-size: 1.6em;
       
@@ -66,7 +65,6 @@ const HomeStyle = styled.section`
         position: fixed;
         top:19em;
         left: 25.8em;
-        
       }
 
       .containerText {
@@ -75,19 +73,14 @@ const HomeStyle = styled.section`
         text-align:center;
         font-family: 'Sniglet', cursive;
     }
-  
 
   .containerContatos{
     font-size: 2em;
   }
 }
-
 `
 
 const Home = () => {
-
-
-
   return (
     <HomeStyle>
       <section className='containerText'>
@@ -97,10 +90,14 @@ const Home = () => {
           eu me divirto codando e solucionando problemas.</p>
         <p>Seja muito bem-vindo(a) !</p>
         <div className='containerContatos'>
-          <TbBrandLinkedin className='icon' />
-          <TbBrandGithub className='icon' />
+          <a href='https://www.linkedin.com/in/saralirio/'>
+            <TbBrandLinkedin className='icon' />
+          </a>
+          <a href='https://github.com/Sara-Lirio'>
+            <TbBrandGithub className='icon' />
+          </a>
           <TbBrandDiscord className='icon' />
-          <TbMail className='icon'/>
+          <TbMail className='icon' />
         </div>
       </section>
     </HomeStyle>

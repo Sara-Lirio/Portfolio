@@ -13,7 +13,7 @@ background-repeat: no-repeat;
 height: 100vh;
 
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 920px) and (max-width: 1920px) {
     background-image: url(${props => props.theme.colors.bgSobre});
 }
 `

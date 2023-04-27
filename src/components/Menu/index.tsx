@@ -13,11 +13,7 @@ const MenuStyle = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items:center;
-
-    a{
-        color: inherit;
-    }
-  
+ 
     .optionMenu {
         margin: .4em 0;
         cursor:pointer;
@@ -25,7 +21,6 @@ const MenuStyle = styled.section`
         position:relative;
         display:inline-block;
     }
-
 
     .optionMenu:after {
         padding-bottom:.2em;
@@ -54,12 +49,9 @@ const MenuStyle = styled.section`
         margin: 0 14em;
         font-size: .9em;
     }
-
-
 `
 
 const Menu = () => {
-
     return (
         <MenuStyle>
             <a className='optionMenu'>
