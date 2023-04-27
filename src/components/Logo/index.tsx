@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const LogoStyle = styled.div`
     width: 8em;
@@ -8,13 +9,14 @@ const LogoStyle = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(${props => props.theme.colors.logo});
+    cursor:pointer;
 `
 
 const Logo = () => {
     return (
-        <LogoStyle>
-           
-        </LogoStyle>
+           <Link to='/'>
+            <LogoStyle></LogoStyle>
+           </Link>
     )
 }
 

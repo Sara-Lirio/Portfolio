@@ -10,6 +10,7 @@ import dark from '../styles/themes/dark'
 import Header from '../components/Header'
 import Home from '../pages/Home'
 import Menu from '../components/Menu'
+import Sobre from '../pages/Sobre'
 
 const AppRoutes = () => {
   const [theme, setTheme] = usePeristedState<DefaultTheme>('theme', light);
@@ -27,6 +28,7 @@ const AppRoutes = () => {
         <Menu />
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/sobre' element={<Sobre/>} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

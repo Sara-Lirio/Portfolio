@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import LogoDark from '../../assets/LogoDark.mp4'
-import bg from "../../assets/backgroundDark.png"
+import { TbBrandLinkedin, TbBrandGithub, TbBrandDiscord, TbMail } from "react-icons/tb";
+
 
 const HomeStyle = styled.section`
     width: 100%;
@@ -28,11 +28,46 @@ const HomeStyle = styled.section`
       font-weight: 600;
       color:${props => props.theme.colors.secundary};
       font-size: 1.6em;
+      cursor: pointer
+    }
+
+    .containerText span p{
+      display:none;
+      font-size: .6em;
+      font-weight: 400;
+    }
+
+    .containerContatos{
+      font-size: 1.5em;
+      margin: 1em;
+      display:flex;
+      justify-content:space-around;
+    }
+
+    .containerContatos .icon:hover{
+      color:${props => props.theme.colors.secundary};
+      cursor: pointer
     }
 
     @media (min-width: 1024px) and (max-width: 1366px) {
       background-image: url(${props => props.theme.colors.backgroundImage});
       font-size: 1.6em;
+      
+      .containerText span:hover .miau{
+        display:inline;
+        position: fixed;
+        top:16em;
+        left: 31.5em;
+      }
+
+      .containerText span:hover .miaau{
+        transition-delay: 5s;
+        display:inline;
+        position: fixed;
+        top:19em;
+        left: 25.8em;
+        
+      }
 
       .containerText {
         width: 20em;
@@ -40,19 +75,33 @@ const HomeStyle = styled.section`
         text-align:center;
         font-family: 'Sniglet', cursive;
     }
+  
+
+  .containerContatos{
+    font-size: 2em;
   }
+}
 
 `
 
 const Home = () => {
 
+
+
   return (
     <HomeStyle>
       <section className='containerText'>
         <p>Olá, me chamo Sara!</p>
-        <p>Sou desenvolvedora <span> Front end </span>
+        <p>Sou desenvolvedora <span> Front end <p className='miau'>miau</p>
+          <p className='miaau'>miaau</p> </span>
           eu me divirto codando e solucionando problemas.</p>
         <p>Seja muito bem-vindo(a) !</p>
+        <div className='containerContatos'>
+          <TbBrandLinkedin className='icon' />
+          <TbBrandGithub className='icon' />
+          <TbBrandDiscord className='icon' />
+          <TbMail className='icon'/>
+        </div>
       </section>
     </HomeStyle>
   )

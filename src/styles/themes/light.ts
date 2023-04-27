@@ -1,5 +1,7 @@
 import bgLight from '../../assets/backgroundLight.png'
 import logoLight from '../../assets/logoLigth.png'
+import bgLightGif from '../../assets/BackgroundLightGif.mp4'
+import bgLightSobre from '../../assets/bgLightSobre.png'
 
 export default {
     title: 'light',
@@ -10,7 +12,8 @@ export default {
   
       background: '#f5f5f5',
       backgroundImage: bgLight,
-      bgMenus: '#f5f5f5',
+      backgroundVideo: bgLightGif,
+      bgSobre: bgLightSobre,
       color:'#404040',
       text: '#303030',
       logo:logoLight,

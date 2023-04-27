@@ -13,15 +13,22 @@ const MenuStyle = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items:center;
+
+    a{
+        color: inherit;
+    }
   
     .optionMenu {
         margin: .4em 0;
         cursor:pointer;
+        padding-bottom:.2em;
         position:relative;
         display:inline-block;
     }
 
+
     .optionMenu:after {
+        padding-bottom:.2em;
         display: block;
         content: '';
         border-bottom: 2px solid ${props => props.theme.colors.secundary};
@@ -31,6 +38,7 @@ const MenuStyle = styled.section`
 
     .optionMenu:hover:after {
         transform: scaleX(1);
+        padding-bottom: .2em;
     }
 
     .divSpan {
@@ -54,7 +62,8 @@ const Menu = () => {
 
     return (
         <MenuStyle>
-            <a className='optionMenu'>Sobre mim</a>
+            <a className='optionMenu'>
+                <Link to='/sobre'>Sobre mim</Link></a>
             <span className='divSpan'></span>
             <a className='optionMenu'>Tecnologias </a>
             <span className='divSpan'></span>
