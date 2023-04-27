@@ -1,42 +1,66 @@
-import React, { useState } from 'react'
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Button from 'react-bootstrap/Button';
+import React from 'react'
 import styled from 'styled-components'
-import { CgMenuGridR } from "react-icons/cg";
+
 import { Link } from 'react-router-dom'
+
 const MenuStyle = styled.section`
-    .btnMenu {
-        border:none;
-        font-size: 2em;
-        background: ${props => props.theme.colors.background};
-        color: ${props => props.theme.colors.text};   
+    color: ${props => props.theme.colors.text};  
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .8em;
+    margin: 0 2em;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+  
+    .optionMenu {
+        margin: .4em 0;
+        cursor:pointer;
+        position:relative;
+        display:inline-block;
     }
-    
+
+    .optionMenu:after {
+        display: block;
+        content: '';
+        border-bottom: 2px solid ${props => props.theme.colors.secundary};
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .optionMenu:hover:after {
+        transform: scaleX(1);
+    }
+
+    .divSpan {
+        border: 1px solid ${props => props.theme.colors.color};
+        border-radius: 4em;
+        width: 4px;
+        height: 4px;
+        background-color: ${props => props.theme.colors.text};
+        margin: 1px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1366px) {
+        margin: 0 14em;
+        font-size: .9em;
+    }
+
+
 `
 
 const Menu = () => {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
         <MenuStyle>
-            <Button variant="primary" 
-            onClick={handleShow} className='btnMenu'>
-                <CgMenuGridR />
-            </Button>
-
-            <Offcanvas show={show} >
-                <p onClick={handleClose}>x</p>
-                <Offcanvas.Body>
-                    <Link to='/sobre'>Sobre mim</Link>
-                    <Link to='/tech'>Tecnologias </Link>
-                    <Link to='/exp'>Minha Experiência</Link>
-                    <Link to='/projetos'>Projetos</Link>
-
-                </Offcanvas.Body>
-            </Offcanvas>
+            <a className='optionMenu'>Sobre mim</a>
+            <span className='divSpan'></span>
+            <a className='optionMenu'>Tecnologias </a>
+            <span className='divSpan'></span>
+            <a className='optionMenu'>Experiências</a>
+            <span className='divSpan'></span>
+            <a className='optionMenu'>Projetos</a>
         </MenuStyle>
     )
 }

@@ -1,14 +1,19 @@
+import bgDark from '../../assets/backgroundDark.png'
+import logoDark from '../../assets/logoDark.png'
+
 export default {
     title: 'dark',
   
     colors: {
-      primary: '#333',
-      secundary: '#C62E65',
+      primary: '#fff',
+      secundary: '#D63AF9',
   
       background: '#222',
+      backgroundImage: bgDark,
       bgMenus: '#222',
       text: '#fff',
-      src:'../../assets/LogoDark.mp4',
+      color: '#fff',
+      logo:logoDark,
     },
   };
   

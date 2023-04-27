@@ -14,15 +14,20 @@ const HeaderStyle = styled.header`
     justify-content: space-between;
     align-items: center;
     margin: 1em;
-`
+
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      margin: 1em 4em;
+  }
+
+  `
 
 const Header = ({ toggleTheme }: Props) => {
   const { title } = useContext(ThemeContext);
 
   return (
     <HeaderStyle>
-      <Menu />
-      <Logo onChange={toggleTheme}/>
+      <Logo
+      />
       <ToggleTremes
         onChange={toggleTheme}
         checked={title === 'dark'}

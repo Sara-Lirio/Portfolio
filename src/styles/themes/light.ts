@@ -1,14 +1,19 @@
+import bgLight from '../../assets/backgroundLight.png'
+import logoLight from '../../assets/logoLigth.png'
+
 export default {
     title: 'light',
   
     colors: {
-      primary: '#C62E65',
-      secundary: '#D63AF9',
+      primary: '#585858',
+      secundary: '#C62E65',
   
       background: '#f5f5f5',
+      backgroundImage: bgLight,
       bgMenus: '#f5f5f5',
+      color:'#404040',
       text: '#303030',
-      src:'../../assets/LogoLight.mp4',
+      logo:logoLight,
     },
   };
   
